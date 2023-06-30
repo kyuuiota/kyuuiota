@@ -6,7 +6,7 @@ import "@fontsource/quicksand";
   @use "sass:color";
   $primary: rgba(256, 256, 256, 1);
   $accent: rgba(251, 198, 200, 1);
-  $bg: rgba(0, 0, 0, 1);
+  $bg: rgba(20, 20, 20, 1);
 
   body {
     background-color: $bg;
@@ -16,6 +16,7 @@ import "@fontsource/quicksand";
     font-family: "Quicksand";
     main {
       width: 65ch;
+      padding: 1.75rem;
       h1 {
         font-size: 2.5rem;
         color: color.change($accent, $alpha: 0.5);
@@ -26,11 +27,11 @@ import "@fontsource/quicksand";
         color: color.change($primary, $alpha: 0.5);
       }
       span {
-        color: color.change($accent, $alpha: 0.5)
+        color: color.change($accent, $alpha: 0.5);
       }
       hr {
         border-color: color.change($accent, $alpha: 0.25);
-        width: 25%;
+        width: 15%;
       }
     }
   }
