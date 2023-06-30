@@ -11,6 +11,9 @@ dependencies:
   '@astrojs/ts-plugin':
     specifier: ^1.0.10
     version: 1.0.10
+  '@fontsource/quicksand':
+    specifier: ^5.0.3
+    version: 5.0.3
   astro:
     specifier: ^2.7.1
     version: 2.7.1(sass@1.63.6)
@@ -582,6 +585,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/quicksand@5.0.3:
+    resolution: {integrity: sha512-vtgF4pkyMhehxuYRtsQ6CwDO1q0XhqnDkl+JQBw1dUYmd7Na1mp6QizkeTunK5QFHL3USZCk5qs61eq9+nl6cA==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}

@@ -1,15 +1,86 @@
 ---
+import "@fontsource/quicksand";
 ---
 
+<style lang="scss">
+  @use "sass:color";
+  $primary: rgba(256, 256, 256, 1);
+  $accent: rgba(251, 198, 200, 1);
+  $bg: rgba(0, 0, 0, 1);
+
+  body {
+    background-color: $bg;
+    display: flex;
+    justify-content: center;
+    color: $primary;
+    font-family: "Quicksand";
+    main {
+      width: 65ch;
+      h1 {
+        font-size: 2.5rem;
+        color: color.change($accent, $alpha: 0.5);
+      }
+      p {
+        margin-bottom: 1em;
+        font-size: 1.25rem;
+        color: color.change($primary, $alpha: 0.5);
+      }
+      span {
+        color: color.change($accent, $alpha: 0.5)
+      }
+      hr {
+        border-color: color.change($accent, $alpha: 0.25);
+        width: 25%;
+      }
+    }
+  }
+</style>
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Kyuu Iota</title>
-	</head>
-	<body>
-		<h1>Kyuu Iota</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Kyuu Iota</title>
+  </head>
+  <body>
+    <main>
+      <h1>Kyuu Iota</h1>
+      <p>
+        Hey I'm Kyuu Iota, a passionate <span>backend engineer</span> with a focus
+        on building robust, efficient and reliable web applications. With my
+        <span
+          >{
+            Math.floor(
+              (new Date().getTime() - new Date(2020, 7, 7).getTime()) /
+                31557600000
+            )
+          } years of experience</span
+        > in programming and development, I have fostered a deep expertise in crafting
+        robust solutions.
+      </p>
+      <p>
+        I specialize in developing server-side architecture, api integrations,
+        database management, and optimizing performance of existing
+        applications. I have a comprehensive grasp on programming languages such
+        as <span>typescript</span> & <span>rust</span> and frameworks such as
+        <span>next.js</span>, <span>astro</span>, <span>prisma</span>,
+        <span>tailwindcss</span>, <span>axum</span> & <span>warp</span>
+        allowing me to deliver optimal solutions for a diverse array of challenges.
+        <p>
+          In addition to my technical knowledge, I prioritize principles of
+          <span>clean code</span> & development of maintanable solutions. I have
+          a strong emphasis on writing code that is efficient and effective while
+          also prioritizing organization and clarity. I am strongly committed to
+          <span>continuous learning</span>, staying updated on the latest
+          industry trends, and constantly expanding my knowledge and skills.
+        </p>
+        <p>
+          Feel free to reach out to me through the contact information provided.
+        </p>
+        <hr />
+      </p>
+    </main>
+  </body>
 </html>
