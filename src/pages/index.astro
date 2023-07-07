@@ -1,5 +1,41 @@
 ---
 import "@fontsource/quicksand";
+
+// TODO: Add this to script tag or something
+let years_of_experience = Math.floor(
+  // I don't remember exactly so just an arbitary date in 2020 with my favorite number 7
+  (new Date().getTime() - new Date(2020, 7, 7).getTime()) /
+    (365.25 * 24 * 60 * 60 * 1000)
+);
+
+let contact_links: IContactLink[] = [
+  {
+    name: "GitHub",
+    href: "http://github.com/kyuuiota",
+    title: "@kyuuiota on GitHub",
+  },
+  {
+    name: "Discord",
+    href: "https://dsc.gg/cafe",
+    title: "@kyuuiota on Discord",
+  },
+  {
+    name: "Instagram",
+    href: "https://instagram.com/kyuuiota",
+    title: "@kyuuiota on Instagram",
+  },
+  {
+    name: "E-Mail",
+    href: "mailto:kyuuiota@gmail.com",
+    title: "kyuuiota@gmail.com",
+  },
+];
+
+interface IContactLink {
+  readonly name: string;
+  readonly href: string;
+  readonly title: string;
+}
 ---
 
 <style lang="scss">
@@ -7,7 +43,8 @@ import "@fontsource/quicksand";
   $primary: rgba(256, 256, 256, 1);
   $accent: rgba(251, 198, 200, 1);
   $bg: rgba(20, 20, 20, 1);
-
+  $purple: rgba(123, 99, 177, 1);
+  $blue: rgba(63, 81, 181, 1);
   body {
     background-color: $bg;
     display: flex;
@@ -15,7 +52,7 @@ import "@fontsource/quicksand";
     color: $primary;
     font-family: "Quicksand";
     main {
-      width: 65ch;
+      width: min(65ch, 75vw);
       padding: 1.75rem;
       h1 {
         font-size: 2.5rem;
@@ -29,9 +66,35 @@ import "@fontsource/quicksand";
       span {
         color: color.change($accent, $alpha: 0.5);
       }
-      hr {
-        border-color: color.change($accent, $alpha: 0.25);
-        width: 15%;
+      ul {
+        padding-top: 0.25rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        gap: 1rem;
+        padding: 1rem;
+        li {
+          list-style-type: none;
+          flex: 1 0 auto;
+          display: inline-block;
+          color: color.change($primary, $alpha: 0.5);
+          font-size: 1.25rem;
+          a {
+            border-radius: 99rem;
+            text-decoration: none;
+            padding: 0.25rem 1.25rem;
+            color: color.change($blue, $alpha: 0.5);
+            background-color: color.change($blue, $alpha: 0.1);
+            &:hover {
+              background-color: color.change($blue, $alpha: 0.2);
+            }
+            &:visited {
+              background-color: color.change($purple, $alpha: 0.1);
+              color: color.change($purple, $alpha: 0.3);
+            }
+          }
+        }
       }
     }
   }
@@ -51,15 +114,8 @@ import "@fontsource/quicksand";
       <p>
         Hey I'm Kyuu Iota, a passionate <span>backend engineer</span> with a focus
         on building robust, efficient and reliable web applications. With my
-        <span
-          >{
-            Math.floor(
-              (new Date().getTime() - new Date(2020, 7, 7).getTime()) /
-                31557600000
-            )
-          } years of experience</span
-        > in programming and development, I have fostered a deep expertise in crafting
-        robust solutions.
+        <span>{years_of_experience} years of experience</span> in programming and
+        development, I have fostered a deep expertise in crafting robust solutions.
       </p>
       <p>
         I specialize in developing server-side architecture, api integrations,
@@ -78,9 +134,17 @@ import "@fontsource/quicksand";
           industry trends, and constantly expanding my knowledge and skills.
         </p>
         <p>
-          Feel free to reach out to me through the contact information provided.
+          Feel free to reach out to me via:
         </p>
-        <hr />
+        <ul>
+          {
+            contact_links.map((e) => (
+              <li>
+                <a href={e.href} title={e.title}>{e.name}</a>
+              </li>
+            ))
+          }
+        </ul>
       </p>
     </main>
   </body>
