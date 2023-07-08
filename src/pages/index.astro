@@ -1,7 +1,6 @@
 ---
 import "@fontsource/quicksand";
 
-// TODO: Add this to script tag or something
 let years_of_experience = Math.floor(
   // I don't remember exactly so just an arbitary date in 2020 with my favorite number 7
   (new Date().getTime() - new Date(2020, 7, 7).getTime()) /
@@ -102,8 +101,25 @@ interface IContactLink {
 
 <html lang="en">
   <head>
+    <!-- NOTE: Amazing tool - https://realfavicongenerator.net -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#141414" />
+    <meta name="msapplication-TileColor" content="#fbc6c8" />
+    <meta name="theme-color" content="#fbc6c8" />
+    <!--|-->
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Kyuu Iota" />
+    <!-- TODO: Add something less random here. -->
+    <meta property="og:description" content="Life is short, talk fast." />
+    <meta property="og:image" content="%PUBLIC_URL%/banner.png" />
+    <meta property="og:type" content="website" />
+    <!--|-->
+
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Kyuu Iota</title>
@@ -133,14 +149,14 @@ interface IContactLink {
           <span>continuous learning</span>, staying updated on the latest
           industry trends, and constantly expanding my knowledge and skills.
         </p>
-        <p>
-          Feel free to reach out to me via:
-        </p>
+        <p>Feel free to reach out to me via:</p>
         <ul>
           {
             contact_links.map((e) => (
               <li>
-                <a href={e.href} title={e.title}>{e.name}</a>
+                <a href={e.href} title={e.title}>
+                  {e.name}
+                </a>
               </li>
             ))
           }
