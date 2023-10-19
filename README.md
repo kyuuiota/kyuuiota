@@ -6,7 +6,7 @@
             <b>Username:</b> @kyuuiota
         </li>
         <li>
-            <b>OS:</b> MacOS & Arch Linux 🐧
+            <b>OS:</b> MacOS & Nix OS 🐧
         </li>
         <li>
             <b>Code Editor:</b> Neovim & Helix ⚡
@@ -18,10 +18,10 @@
     <h2 align="center">Tech Stack</h2>
     <table>
         <tr>
-            <td>Web</td><td>axum, yew, prisma, solid.js, svelte, react, next, trpc, tailwindcss</td>
+            <td>Web</td><td>actix-web, prisma, solid.js, svelte, react, next, trpc, tailwindcss</td>
         </tr>
         <tr>
-            <td>Discord Bots</td><td>poise, eris, pycord, discord.js</td>
+            <td>Discord Bots</td><td>poise, eris, discord.py, discord.js</td>
         </tr>
         <tr>
             <td>Databases</td><td>redis, postgresql, mongodb, mariadb/mysql</td>
